@@ -45,9 +45,13 @@ void run_from_rwx() {
 
 int parse() {
 	unsigned int code = 0xD2800000;
+	//unsigned int code = 0xD2800001;
 	unsigned int mov_opc = 0xD2800000;
+	unsigned int mov_rd = 0x1f;
 	if ((code & mov_opc) == mov_opc) {
 		printf("MOV instruction detected!\n");
+		unsigned int rd = code & mov_rd;
+		printf("MOV rd = %u\n", rd);
 		return 1;
 	}
 }
