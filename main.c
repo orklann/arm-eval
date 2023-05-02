@@ -43,7 +43,7 @@ void run_from_rwx() {
   printf("result = %d\n", result);
 }
 
-int parse() {
+int parse_mov() {
 	unsigned int code = 0xD2800000;
 	//unsigned int code = 0xD2800020;
 	unsigned int mov_opc = 0xD2800000;
@@ -61,5 +61,5 @@ int parse() {
 
 int main() {
   //run_from_rwx();
-  parse();
+  parse_mov();
 }
