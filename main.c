@@ -59,7 +59,17 @@ int parse_mov() {
 	}
 }
 
+int parse_add() {
+	unsigned int code = 0x91000421;
+	unsigned int add_opc = 0x91000000;
+	if ((code & add_opc) == add_opc) {
+		printf("Add instruction detected!\n");
+		return 1;
+	}
+}
+
 int main() {
   //run_from_rwx();
   parse_mov();
+  parse_add();
 }
