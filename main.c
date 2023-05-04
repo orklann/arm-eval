@@ -62,8 +62,17 @@ int parse_mov() {
 int parse_add() {
 	unsigned int code = 0x91000421;
 	unsigned int add_opc = 0x91000000;
+	unsigned int add_rn = 0x3e0;
+	unsigned int add_rd = 0xf;
+	unsigned int add_imm12 = 0x3ffc00;
 	if ((code & add_opc) == add_opc) {
 		printf("Add instruction detected!\n");
+		unsigned int rn = (code & add_rn) >> 5;
+		printf("Add rn = %d\n", rn);
+		unsigned int rd = code & add_rd;
+		printf("Add rd = %d\n", rd);
+		unsigned int imm12 = (code & add_imm12) >> 10;
+		printf("Add imm12 = %d\n", imm12);
 		return 1;
 	}
 }
