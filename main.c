@@ -95,9 +95,25 @@ int parse_add_register() {
 	return 1;
 }
 
+int parse_cmp() {
+	unsigned int code = 0xf101903f;
+	unsigned int cmp_opc = 0xF1000000;
+	unsigned int cmp_rn = 0x3e0;
+	unsigned int cmp_imm12 = 0x3FFC00;
+	if ((code & cmp_opc) == cmp_opc) {
+		printf("CMP instruction detected!\n");
+		unsigned int rn = (code & cmp_rn) >> 5;
+		printf("CMP rn = %d\n", rn);
+		unsigned int imm12 = (code & cmp_imm12) >> 10;
+		printf("CMP imm12 = %d\n", imm12);
+	}
+	return 1;
+}
+
 int main() {
 	//run_from_rwx();
 	parse_mov();
 	parse_add();
 	parse_add_register();
+	parse_cmp();
 }
