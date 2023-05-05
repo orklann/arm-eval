@@ -80,8 +80,17 @@ int parse_add() {
 int parse_add_register() {
 	unsigned int code = 0x8B020000;
 	unsigned int add_opc = 0x8B000000;
+	unsigned int add_rd = 0x1f;
+	unsigned int add_rn = 0x3e0;
+	unsigned int add_rm = 0x1F0000;
 	if ((code & add_opc) == add_opc) {
 		printf("Add register instruction detected!\n");
+		unsigned int rd = code & add_rd;
+		printf("Add rd = %d\n", rd);
+		unsigned int rn = (code & add_rn) >> 5;
+		printf("Add rn = %d\n", rn);
+		unsigned int rm = (code & add_rm) >> 16;
+		printf("Add rm = %d\n", rm);
 	}
 	return 1;
 }
