@@ -77,8 +77,18 @@ int parse_add() {
 	}
 }
 
+int parse_add_register() {
+	unsigned int code = 0x8B020000;
+	unsigned int add_opc = 0x8B000000;
+	if ((code & add_opc) == add_opc) {
+		printf("Add register instruction detected!\n");
+	}
+	return 1;
+}
+
 int main() {
-  //run_from_rwx();
-  parse_mov();
-  parse_add();
+	//run_from_rwx();
+	parse_mov();
+	parse_add();
+	parse_add_register();
 }
