@@ -110,10 +110,20 @@ int parse_cmp() {
 	return 1;
 }
 
+int parse_bne() {
+	unsigned int code = 0x54ffffa1;
+	unsigned int bne_opc = 0x54000000;
+	if ((code & bne_opc) == bne_opc) {
+		printf("BNE instruction detected!\n");
+	}
+	return 1;
+}
+
 int main() {
 	//run_from_rwx();
 	parse_mov();
 	parse_add();
 	parse_add_register();
 	parse_cmp();
+	parse_bne();
 }
