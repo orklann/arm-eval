@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdint.h>
 #include <stdlib.h>
 #include <string.h>
 #include <sys/mman.h>
@@ -43,9 +44,7 @@ void run_from_rwx() {
   printf("result = %d\n", result);
 }
 
-int parse_mov() {
-	unsigned int code = 0xD2800000;
-	//unsigned int code = 0xD2800020;
+int parse_mov(unsigned int code) {
 	unsigned int mov_opc = 0xD2800000;
 	unsigned int mov_rd = 0x1f;
 	unsigned int mov_imm = 0x1FFFE0;
@@ -59,8 +58,7 @@ int parse_mov() {
 	}
 }
 
-int parse_add() {
-	unsigned int code = 0x91000421;
+int parse_add(unsigned int code) {
 	unsigned int add_opc = 0x91000000;
 	unsigned int add_rn = 0x3e0;
 	unsigned int add_rd = 0xf;
@@ -77,8 +75,7 @@ int parse_add() {
 	}
 }
 
-int parse_add_register() {
-	unsigned int code = 0x8B020000;
+int parse_add_register(unsigned int code) {
 	unsigned int add_opc = 0x8B000000;
 	unsigned int add_rd = 0x1f;
 	unsigned int add_rn = 0x3e0;
@@ -95,8 +92,7 @@ int parse_add_register() {
 	return 1;
 }
 
-int parse_cmp() {
-	unsigned int code = 0xf101903f;
+int parse_cmp(unsigned int code) {
 	unsigned int cmp_opc = 0xF1000000;
 	unsigned int cmp_rn = 0x3e0;
 	unsigned int cmp_imm12 = 0x3FFC00;
@@ -110,8 +106,7 @@ int parse_cmp() {
 	return 1;
 }
 
-int parse_bne() {
-	unsigned int code = 0x54ffffa1;
+int parse_bne(unsigned int code) {
 	unsigned int bne_opc = 0x54000000;
 	if ((code & bne_opc) == bne_opc) {
 		printf("BNE instruction detected!\n");
@@ -119,11 +114,49 @@ int parse_bne() {
 	return 1;
 }
 
+int eval() {
+	int codes[] = {
+    		0xD2800000,
+		0xD2800001,
+		0xD2800042,
+		0x91000421,
+		0x8B020000,
+		0xF101903F,
+		0x54FFFFA1
+	};
+	uint64_t x[5];
+	int pc = 0;
+	int len = 7;
+	unsigned int mov_opc = 0xD2800000;
+	unsigned int add_opc = 0x91000000;
+	unsigned int add_register_opc = 0x8B000000;
+	unsigned int cmp_opc = 0xF1000000;
+	unsigned int bne_opc = 0x54000000;
+	while (pc <= len -1) {
+		unsigned int code = codes[pc];
+		if ((code & mov_opc) == mov_opc) {
+			parse_mov(code);
+		} 
+
+		if ((code & add_opc) == add_opc) {
+			parse_add(code);
+		}
+		if ((code & add_register_opc) == add_register_opc) {
+			parse_add_register(code);
+		}
+		if ((code & cmp_opc) == cmp_opc) {
+
+			parse_cmp(code);
+		}
+		if ((code & bne_opc) == bne_opc) {
+			parse_bne(code);
+		}
+		pc++;
+	}
+	return 0;
+}
+
 int main() {
 	//run_from_rwx();
-	parse_mov();
-	parse_add();
-	parse_add_register();
-	parse_cmp();
-	parse_bne();
+	eval();
 }
