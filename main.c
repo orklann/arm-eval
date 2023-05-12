@@ -30,6 +30,10 @@ void emit_code_into_memory(unsigned char* m) {
 const size_t SIZE = 1024;
 typedef long (*JittedFunc)(long);
 
+uint64_t x[5] = {0 , 0, 0, 0, 0};
+int pc = 0;
+unsigned int flag = 0;
+
 // Allocates RWX memory directly.
 void run_from_rwx() {
   void* m = alloc_executable_memory(SIZE);
@@ -54,6 +58,8 @@ int parse_mov(unsigned int code) {
 		unsigned int imm12 = (code & mov_imm) >> 5;
 		printf("MOV rd = %u\n", rd);
 		printf("MOV imm12 = %u\n", imm12);
+		x[rd] = imm12;
+		printf("x[rd] = %lu\n", x[rd]);
 		return 1;
 	}
 }
@@ -61,16 +67,18 @@ int parse_mov(unsigned int code) {
 int parse_add(unsigned int code) {
 	unsigned int add_opc = 0x91000000;
 	unsigned int add_rn = 0x3e0;
-	unsigned int add_rd = 0xf;
+	unsigned int add_rd = 0x1F;
 	unsigned int add_imm12 = 0x3ffc00;
 	if ((code & add_opc) == add_opc) {
 		printf("Add instruction detected!\n");
+		printf("Code = 0x%x\n", code);
 		unsigned int rn = (code & add_rn) >> 5;
 		printf("Add rn = %d\n", rn);
 		unsigned int rd = code & add_rd;
 		printf("Add rd = %d\n", rd);
 		unsigned int imm12 = (code & add_imm12) >> 10;
 		printf("Add imm12 = %d\n", imm12);
+		x[rd] = x[rn] + imm12;
 		return 1;
 	}
 }
@@ -88,6 +96,7 @@ int parse_add_register(unsigned int code) {
 		printf("Add rn = %d\n", rn);
 		unsigned int rm = (code & add_rm) >> 16;
 		printf("Add rm = %d\n", rm);
+		x[rd] = x[rn] + x[rm];
 	}
 	return 1;
 }
@@ -102,6 +111,10 @@ int parse_cmp(unsigned int code) {
 		printf("CMP rn = %d\n", rn);
 		unsigned int imm12 = (code & cmp_imm12) >> 10;
 		printf("CMP imm12 = %d\n", imm12);
+		printf("x[1] = %lu\n", x[1]);
+		if (x[rn] == imm12) {
+			flag = 1;
+		}
 	}
 	return 1;
 }
@@ -110,9 +123,13 @@ int parse_bne(unsigned int code) {
 	unsigned int bne_opc = 0x54000000;
 	if ((code & bne_opc) == bne_opc) {
 		printf("BNE instruction detected!\n");
+		if (flag == 0) {
+			pc -= 4;
+		}
 	}
 	return 1;
 }
+
 
 int eval() {
 	int codes[] = {
@@ -124,33 +141,28 @@ int eval() {
 		0xF101903F,
 		0x54FFFFA1
 	};
-	uint64_t x[5];
-	int pc = 0;
 	int len = 7;
 	unsigned int mov_opc = 0xD2800000;
 	unsigned int add_opc = 0x91000000;
 	unsigned int add_register_opc = 0x8B000000;
-	unsigned int cmp_opc = 0xF1000000;
+	unsigned int cmp_opc = 0xF100001F;
 	unsigned int bne_opc = 0x54000000;
 	while (pc <= len -1) {
 		unsigned int code = codes[pc];
-		if ((code & mov_opc) == mov_opc) {
-			parse_mov(code);
-		} 
-
-		if ((code & add_opc) == add_opc) {
-			parse_add(code);
-		}
-		if ((code & add_register_opc) == add_register_opc) {
-			parse_add_register(code);
-		}
 		if ((code & cmp_opc) == cmp_opc) {
-
 			parse_cmp(code);
-		}
-		if ((code & bne_opc) == bne_opc) {
+		} else if ((code & mov_opc) == mov_opc) {
+			parse_mov(code);
+		} else if ((code & add_opc) == add_opc && code != 0xF101903F) {
+			parse_add(code);
+		} else if ((code & add_register_opc) == add_register_opc) {
+			parse_add_register(code);
+		} else if ((code & bne_opc) == bne_opc) {
 			parse_bne(code);
 		}
+		printf("x0 = %lu\n", x[0]);
+		printf("x1 = %lu\n", x[1]);
+		printf("x2 = %lu\n", x[2]);
 		pc++;
 	}
 	return 0;
@@ -159,4 +171,7 @@ int eval() {
 int main() {
 	//run_from_rwx();
 	eval();
+	printf("flag = %d\n", flag);
+	printf("x0 = %lu\n", x[0]);
 }
+
