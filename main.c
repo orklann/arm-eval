@@ -18,12 +18,7 @@ void* alloc_executable_memory(size_t size) {
   return ptr;
 }
 
-void emit_code_into_memory(unsigned char* m) {
-  unsigned char code[] = {
-    0x48, 0x89, 0xf8,                   // mov %rdi, %rax
-    0x48, 0x83, 0xc0, 0x04,             // add $4, %rax
-    0xc3                                // ret
-  };
+void emit_code_into_memory(unsigned char* m, unsigned char *code) {
   memcpy(m, code, sizeof(code));
 }
 
@@ -37,14 +32,18 @@ unsigned int flag = 0;
 // Allocates RWX memory directly.
 void run_from_rwx() {
   void* m = alloc_executable_memory(SIZE);
-  emit_code_into_memory(m);
+  unsigned char code[] = {
+    0x48, 0xc7, 0xc3, 0x01, 0x00, 0x00, 0x00,
+    0xc3                                // ret
+  };
+  emit_code_into_memory(m, code);
 
   JittedFunc func = m;
   int result = func(3);
   /* Read eax into i */
   int i;
-  asm("\t movl %%eax,%0" : "=r"(i));
-  printf("eax = %d\n", i);
+  asm("\t movl %%ebx,%0" : "=r"(i));
+  printf("rbx = %d\n", i);
   printf("result = %d\n", result);
 }
 
@@ -169,9 +168,10 @@ int eval() {
 }
 
 int main() {
-	//run_from_rwx();
-	eval();
+	run_from_rwx();
+	/*eval();
 	printf("flag = %d\n", flag);
 	printf("x0 = %lu\n", x[0]);
+	*/
 }
 
