@@ -30,21 +30,18 @@ int pc = 0;
 unsigned int flag = 0;
 
 // Allocates RWX memory directly.
-void run_from_rwx() {
+void run_from_rwx(unsigned char *code) {
   void* m = alloc_executable_memory(SIZE);
+  /*
   unsigned char code[] = {
     0x48, 0xc7, 0xc3, 0x01, 0x00, 0x00, 0x00,
     0xc3                                // ret
   };
+  */
   emit_code_into_memory(m, code);
 
   JittedFunc func = m;
   int result = func(3);
-  /* Read eax into i */
-  int i;
-  asm("\t movl %%ebx,%0" : "=r"(i));
-  printf("rbx = %d\n", i);
-  printf("result = %d\n", result);
 }
 
 int parse_mov(unsigned int code) {
@@ -59,6 +56,49 @@ int parse_mov(unsigned int code) {
 		printf("MOV imm12 = %u\n", imm12);
 		x[rd] = imm12;
 		printf("x[rd] = %lu\n", x[rd]);
+		if (rd == 0) {
+			unsigned char code[] = {
+				0x48, 0xc7, 0xc0, 
+				(imm12 & 0x000000FF), 
+				(imm12 & 0x0000FF00) >> 8, 
+				(imm12 & 0x00FF0000) >> 16, 
+				(imm12 & 0xFF000000) >> 24,
+				0xc3                // ret
+			};
+			run_from_rwx(code);
+			/* Read eax into i */
+			int i;
+			asm("\t movl %%eax,%0" : "=r"(i));
+			printf("rax = %d\n", i);
+		} else if (rd == 1) {
+			unsigned char code[] = {
+				0x48, 0xc7, 0xc3, 
+				(imm12 & 0x000000FF), 
+				(imm12 & 0x0000FF00) >> 8, 
+				(imm12 & 0x00FF0000) >> 16, 
+				(imm12 & 0xFF000000) >> 24,
+				0xc3                // ret
+			};
+			run_from_rwx(code);
+			int i;
+			asm("\t movl %%ebx,%0" : "=r"(i));
+			printf("rbx = %d\n", i);
+		} else if (rd == 2) {
+			unsigned char code[] = {
+				0x48, 0xc7, 0xc1, 
+				(imm12 & 0x000000FF), 
+				(imm12 & 0x0000FF00) >> 8, 
+				(imm12 & 0x00FF0000) >> 16, 
+				(imm12 & 0xFF000000) >> 24,
+				0xc3                // ret
+			};
+			
+			printf("imm12=%d\n", imm12);
+			run_from_rwx(code);
+			int i;
+			asm("\t movl %%ecx,%0" : "=r"(i));
+			printf("rcx = %d\n", i);
+		}
 		return 1;
 	}
 }
@@ -157,6 +197,7 @@ int eval() {
 		} else if ((code & add_register_opc) == add_register_opc) {
 			parse_add_register(code);
 		} else if ((code & bne_opc) == bne_opc) {
+			break;
 			parse_bne(code);
 		}
 		printf("x0 = %lu\n", x[0]);
@@ -168,9 +209,10 @@ int eval() {
 }
 
 int main() {
-	run_from_rwx();
-	/*eval();
-	printf("flag = %d\n", flag);
+	//run_from_rwx();
+	eval();
+	
+	/*printf("flag = %d\n", flag);
 	printf("x0 = %lu\n", x[0]);
 	*/
 }
