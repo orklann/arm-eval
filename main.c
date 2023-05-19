@@ -143,7 +143,7 @@ int parse_add_register(unsigned int code) {
 		if (rd == 0) {
 			// add rax, rcx
 			unsigned char code[] = {
-				0x48, 0x01, 0xc8
+				0x48, 0x01, 0xc8,
 			};
 			
 			emit_code(code, sizeof(code) / sizeof(code[0]));
@@ -166,6 +166,14 @@ int parse_cmp(unsigned int code) {
 		if (x[rn] == imm12) {
 			flag = 1;
 		}
+		// add rax, rcx
+		unsigned char code[] = {
+			0x49, 0x89, 0xdf,
+			0x49, 0x83, 0xef, imm12,
+		};
+		
+		emit_code(code, sizeof(code) / sizeof(code[0]));
+
 	}
 	return 1;
 }
@@ -188,7 +196,7 @@ int eval() {
 		0xD2800042,
 		0x91000421,
 		0x8B020000,
-		0xF13E803F,
+		0xF101903F,
 		0x54FFFFA1
 	};
 	int len = 7;
@@ -217,12 +225,15 @@ int eval() {
 			code_length += 1;
 			run_from_rwx(cache_code, code_length);
 			int rax, rbx, rcx;
+			int64_t r15;
   			asm("\t movl %%eax,%0" : "=r"(rax));
   			asm("\t movl %%ecx,%0" : "=r"(rcx));
   			asm("\t movl %%ebx,%0" : "=r"(rbx));
+  			asm("\t movq %%r15,%0" : "=r"(r15));
 			printf("\nrcx = %d\n", rcx);
 			printf("rbx = %d\n", rbx);
 			printf("rax = %d\n", rax);
+			printf("r15 = %ld\n", r15);
 			break;
 			parse_bne(code);
 		}
