@@ -139,6 +139,15 @@ int parse_add_register(unsigned int code) {
 		unsigned int rm = (code & add_rm) >> 16;
 		printf("Add rm = %d\n", rm);
 		x[rd] = x[rn] + x[rm];
+
+		if (rd == 0) {
+			// add rax, rcx
+			unsigned char code[] = {
+				0x48, 0x01, 0xc8
+			};
+			
+			emit_code(code, sizeof(code) / sizeof(code[0]));
+		}
 	}
 	return 1;
 }
