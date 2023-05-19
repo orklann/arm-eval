@@ -4,6 +4,14 @@
 #include <string.h>
 #include <sys/mman.h>
 
+unsigned char cache_code[1024];
+unsigned int code_length = 0;
+
+void emit_code(unsigned char* user_code, int code_size) {
+	memcpy(cache_code + code_length, user_code, code_size); 
+	code_length += code_size;
+}
+
 
 // Allocates RWX memory of given size and returns a pointer to it. On failure,
 // prints out the error and returns NULL.
@@ -31,12 +39,6 @@ unsigned int flag = 0;
 // Allocates RWX memory directly.
 void run_from_rwx(unsigned char *code, int size) {
   void* m = alloc_executable_memory(1024);
-  /*
-  unsigned char code[] = {
-    0x48, 0xc7, 0xc3, 0x01, 0x00, 0x00, 0x00,
-    0xc3                                // ret
-  };
-  */
   emit_code_into_memory(m, code, size);
 
   JittedFunc func = m;
@@ -62,12 +64,9 @@ int parse_mov(unsigned int code) {
 				(imm12 & 0x0000FF00) >> 8, 
 				(imm12 & 0x00FF0000) >> 16, 
 				(imm12 & 0xFF000000) >> 24,
-				0xc3                // ret
 			};
-			run_from_rwx(code, sizeof(code) / sizeof(code[0]));
-			int i;
-			asm("\t movl %%eax,%0" : "=r"(i));
-			printf("rax = %d\n", i);
+
+			emit_code(code, sizeof(code) / sizeof(code[0]));
 		} else if (rd == 1) {
 			unsigned char code[] = {
 				0x48, 0xc7, 0xc3, 
@@ -75,12 +74,9 @@ int parse_mov(unsigned int code) {
 				(imm12 & 0x0000FF00) >> 8, 
 				(imm12 & 0x00FF0000) >> 16, 
 				(imm12 & 0xFF000000) >> 24,
-				0xc3                // ret
 			};
-			run_from_rwx(code, sizeof(code) / sizeof(code[0]));
-			int i;
-			asm("\t movl %%ebx,%0" : "=r"(i));
-			printf("rbx = %d\n", i);
+
+			emit_code(code, sizeof(code) / sizeof(code[0]));
 		} else if (rd == 2) {
 			unsigned char code[] = {
 				0x48, 0xc7, 0xc1, 
@@ -88,14 +84,9 @@ int parse_mov(unsigned int code) {
 				(imm12 & 0x0000FF00) >> 8, 
 				(imm12 & 0x00FF0000) >> 16, 
 				(imm12 & 0xFF000000) >> 24,
-				0xc3                // ret
 			};
 			
-			printf("imm12=%d\n", imm12);
-			run_from_rwx(code, sizeof(code) / sizeof(code[0]));
-			int i;
-			asm("\t movl %%ecx,%0" : "=r"(i));
-			printf("rcx = %d\n", i);
+			emit_code(code, sizeof(code) / sizeof(code[0]));
 		}
 		return 1;
 	}
@@ -127,13 +118,9 @@ int parse_add(unsigned int code) {
 				(imm12 & 0x00FF0000) >> 16, 
 				(imm12 & 0xFF000000) >> 24,
 				0x48, 0x01, 0xd3,
-				0xc3                // ret
 			};
 			
-			run_from_rwx(code, sizeof(code) / sizeof(code[0]));
-			int i;
-			asm("\t movl %%ebx,%0" : "=r"(i));
-			printf("rbx = %d\n", i);
+			emit_code(code, sizeof(code) / sizeof(code[0]));
 		}
 		return 1;
 	}
@@ -213,6 +200,17 @@ int eval() {
 		} else if ((code & add_register_opc) == add_register_opc) {
 			parse_add_register(code);
 		} else if ((code & bne_opc) == bne_opc) {
+			printf("cache code size: %d\n", code_length);
+			for (int i = 0; i < code_length; i++) {
+				printf("%x ", cache_code[i]);
+			}
+			unsigned char ret[] = {0xc3};
+			memcpy(cache_code + code_length, ret, 1);
+			code_length += 1;
+			run_from_rwx(cache_code, code_length);
+			int i;
+			asm("\t movl %%ebx,%0" : "=r"(i));
+			printf("\nrbx = %d\n", i);
 			break;
 			parse_bne(code);
 		}
