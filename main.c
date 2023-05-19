@@ -118,6 +118,25 @@ int parse_add(unsigned int code) {
 		unsigned int imm12 = (code & add_imm12) >> 10;
 		printf("Add imm12 = %d\n", imm12);
 		x[rd] = x[rn] + imm12;
+		if (rd == 1) {
+			// mov rbx, 0
+			// mov rdx, imm
+			unsigned char code[] = {
+				0x48, 0xc7, 0xc3, 0x00, 0x00, 0x00, 0x00,
+				0x49, 0xc7, 0xc0,
+				(imm12 & 0x000000FF), 
+				(imm12 & 0x0000FF00) >> 8, 
+				(imm12 & 0x00FF0000) >> 16, 
+				(imm12 & 0xFF000000) >> 24,
+				0x4c, 0x01, 0xc3,
+				0xc3                // ret
+			};
+			
+			run_from_rwx(code);
+			int i;
+			asm("\t movl %%ebx,%0" : "=r"(i));
+			printf("rbx = %d\n", i);
+		}
 		return 1;
 	}
 }
