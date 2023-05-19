@@ -207,9 +207,11 @@ int eval() {
 			memcpy(cache_code + code_length, ret, 1);
 			code_length += 1;
 			run_from_rwx(cache_code, code_length);
-			int i;
-			asm("\t movl %%ebx,%0" : "=r"(i));
-			printf("\nrbx = %d\n", i);
+			int rbx, rcx, rax;
+			asm("\tmovl %%ebx,%0;\tmovl %%ecx, %1;\tmovl %%eax, %2" : "=r"(rbx), "=r"(rcx), "=r"(rax));
+			printf("\nrax = %d\n", rax);
+			printf("rbx = %d\n", rbx);
+			printf("rcx = %d\n", rcx);
 			break;
 			parse_bne(code);
 		}
