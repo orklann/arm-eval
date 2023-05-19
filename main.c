@@ -29,7 +29,7 @@ int pc = 0;
 unsigned int flag = 0;
 
 // Allocates RWX memory directly.
-void run_from_rwx(unsigned char *code) {
+void run_from_rwx(unsigned char *code, int size) {
   void* m = alloc_executable_memory(1024);
   /*
   unsigned char code[] = {
@@ -37,13 +37,12 @@ void run_from_rwx(unsigned char *code) {
     0xc3                                // ret
   };
   */
-  emit_code_into_memory(m, code, 1);
+  emit_code_into_memory(m, code, size);
 
   JittedFunc func = m;
   int result = func(3);
 }
 
-/*
 int parse_mov(unsigned int code) {
 	unsigned int mov_opc = 0xD2800000;
 	unsigned int mov_rd = 0x1f;
@@ -65,7 +64,7 @@ int parse_mov(unsigned int code) {
 				(imm12 & 0xFF000000) >> 24,
 				0xc3                // ret
 			};
-			run_from_rwx(code);
+			run_from_rwx(code, sizeof(code) / sizeof(code[0]));
 			int i;
 			asm("\t movl %%eax,%0" : "=r"(i));
 			printf("rax = %d\n", i);
@@ -78,7 +77,7 @@ int parse_mov(unsigned int code) {
 				(imm12 & 0xFF000000) >> 24,
 				0xc3                // ret
 			};
-			run_from_rwx(code);
+			run_from_rwx(code, sizeof(code) / sizeof(code[0]));
 			int i;
 			asm("\t movl %%ebx,%0" : "=r"(i));
 			printf("rbx = %d\n", i);
@@ -93,7 +92,7 @@ int parse_mov(unsigned int code) {
 			};
 			
 			printf("imm12=%d\n", imm12);
-			run_from_rwx(code);
+			run_from_rwx(code, sizeof(code) / sizeof(code[0]));
 			int i;
 			asm("\t movl %%ecx,%0" : "=r"(i));
 			printf("rcx = %d\n", i);
@@ -127,7 +126,7 @@ int parse_add(unsigned int code) {
 				0xc3                // ret
 			};
 			
-			run_from_rwx(code);
+			run_from_rwx(code, sizeof(code) / sizeof(code[0]));
 			int i;
 			asm("\t movl %%ebx,%0" : "=r"(i));
 			printf("rbx = %d\n", i);
@@ -221,7 +220,6 @@ int eval() {
 	return 0;
 }
 
-*/
 void run_code() {
   void* m = alloc_executable_memory(1024);
   
@@ -245,8 +243,8 @@ void run_code() {
 
 int main() {
 	//run_from_rwx();
-	//eval();
-	run_code();
+	eval();
+	//run_code();
 	/*printf("flag = %d\n", flag);
 	printf("x0 = %lu\n", x[0]);
 	*/
