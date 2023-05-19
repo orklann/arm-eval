@@ -111,7 +111,6 @@ int parse_add(unsigned int code) {
 			// mov rbx, 0
 			// mov rdx, imm
 			unsigned char code[] = {
-				0x48, 0xc7, 0xc3, 0x00, 0x00, 0x00, 0x00,
 				0x48, 0xc7, 0xc2, 
 				(imm12 & 0x000000FF), 
 				(imm12 & 0x0000FF00) >> 8, 
