@@ -7,8 +7,7 @@
 
 // Allocates RWX memory of given size and returns a pointer to it. On failure,
 // prints out the error and returns NULL.
-void* alloc_executable_memory(size_t size) {
-  void* ptr = mmap(0, size,
+void* alloc_executable_memory(size_t size) { void* ptr = mmap(0, size,
                    PROT_READ | PROT_WRITE | PROT_EXEC,
                    MAP_PRIVATE | MAP_ANONYMOUS, -1, 0);
   if (ptr == (void*)-1) {
@@ -18,8 +17,8 @@ void* alloc_executable_memory(size_t size) {
   return ptr;
 }
 
-void emit_code_into_memory(unsigned char* m, unsigned char *code) {
-  memcpy(m, code, sizeof(code));
+void emit_code_into_memory(unsigned char* m, unsigned char *code, int size) {
+  memcpy(m, code, size);
 }
 
 const size_t SIZE = 1024;
@@ -31,19 +30,20 @@ unsigned int flag = 0;
 
 // Allocates RWX memory directly.
 void run_from_rwx(unsigned char *code) {
-  void* m = alloc_executable_memory(SIZE);
+  void* m = alloc_executable_memory(1024);
   /*
   unsigned char code[] = {
     0x48, 0xc7, 0xc3, 0x01, 0x00, 0x00, 0x00,
     0xc3                                // ret
   };
   */
-  emit_code_into_memory(m, code);
+  emit_code_into_memory(m, code, 1);
 
   JittedFunc func = m;
   int result = func(3);
 }
 
+/*
 int parse_mov(unsigned int code) {
 	unsigned int mov_opc = 0xD2800000;
 	unsigned int mov_rd = 0x1f;
@@ -66,7 +66,6 @@ int parse_mov(unsigned int code) {
 				0xc3                // ret
 			};
 			run_from_rwx(code);
-			/* Read eax into i */
 			int i;
 			asm("\t movl %%eax,%0" : "=r"(i));
 			printf("rax = %d\n", i);
@@ -123,12 +122,8 @@ int parse_add(unsigned int code) {
 			// mov rdx, imm
 			unsigned char code[] = {
 				0x48, 0xc7, 0xc3, 0x00, 0x00, 0x00, 0x00,
-				0x49, 0xc7, 0xc0,
-				(imm12 & 0x000000FF), 
-				(imm12 & 0x0000FF00) >> 8, 
-				(imm12 & 0x00FF0000) >> 16, 
-				(imm12 & 0xFF000000) >> 24,
-				0x4c, 0x01, 0xc3,
+				0x48, 0xc7, 0xc1, 0x01, 0x00, 0x00, 0x00,
+				0x48, 0x01, 0xcb,
 				0xc3                // ret
 			};
 			
@@ -188,7 +183,6 @@ int parse_bne(unsigned int code) {
 	return 1;
 }
 
-
 int eval() {
 	int codes[] = {
     		0xD2800000,
@@ -227,10 +221,32 @@ int eval() {
 	return 0;
 }
 
+*/
+void run_code() {
+  void* m = alloc_executable_memory(1024);
+  
+  unsigned char code[] = {
+	0x48, 0xc7, 0xc3, 0x00, 0x00, 0x00, 0x00,
+	0x48, 0xc7, 0xc1, 0x01, 0x00, 0x00, 0x00,
+	0x48, 0x01, 0xcb,
+	0xc3                // ret
+  };
+
+  emit_code_into_memory(m, code, sizeof(code) / sizeof(code[0]));
+
+  JittedFunc func = m;
+  int result = func(3);
+
+  int i;
+  asm("\t movl %%ebx,%0" : "=r"(i));
+  printf("rbx = %d\n", i);
+}
+
+
 int main() {
 	//run_from_rwx();
-	eval();
-	
+	//eval();
+	run_code();
 	/*printf("flag = %d\n", flag);
 	printf("x0 = %lu\n", x[0]);
 	*/
