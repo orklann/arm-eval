@@ -7,6 +7,22 @@
 unsigned char cache_code[1024];
 unsigned int code_length = 0;
 
+uint64_t RAX = 0, RBX = 0, RCX = 0;
+int64_t R15;
+
+#define save_registers \
+  	asm("movq %%rax, %0" : "=r"(RAX)); \
+  	asm("movq %%rbx, %0" : "=r"(RBX)); \
+  	asm("movq %%rcx, %0" : "=r"(RCX)); \
+
+#define load_registers \
+	uint64_t a, b, c; \
+	int64_t r; \
+	printf(">> RAX = %ld, RBX = %ld, RCX = %ld\n", RAX, RBX, RCX); \
+	asm("movq %1, %%rax" : "=a"(a) : "r"(RAX)); \
+	asm("movq %1, %%rbx" : "=a"(b) : "r"(RBX)); \
+	asm("movq %1, %%rcx" : "=a"(c) : "r"(RCX)); \
+
 void emit_code(unsigned char* user_code, int code_size) {
 	memcpy(cache_code + code_length, user_code, code_size); 
 	code_length += code_size;
@@ -42,6 +58,8 @@ void run_from_rwx(unsigned char *code, int size) {
   emit_code_into_memory(m, code, size);
 
   JittedFunc func = m;
+
+  load_registers;
   int result = func(3);
 }
 
@@ -224,22 +242,17 @@ int eval() {
 			memcpy(cache_code + code_length, ret, 1);
 			code_length += 1;
 			run_from_rwx(cache_code, code_length);
-			int rax, rbx, rcx;
+			save_registers;
 			int64_t r15;
-  			asm("\t movl %%eax,%0" : "=r"(rax));
-  			asm("\t movl %%ecx,%0" : "=r"(rcx));
-  			asm("\t movl %%ebx,%0" : "=r"(rbx));
   			asm("\t movq %%r15,%0" : "=r"(r15));
-			printf("\nrcx = %d\n", rcx);
-			printf("rbx = %d\n", rbx);
-			printf("rax = %d\n", rax);
 			printf("r15 = %ld\n", r15);
-			break;
-			parse_bne(code);
+			printf("===============================\n");
+			printf("Saved registers rax = %ld, rbx = %ld, rcx = %ld\n", RAX, RBX, RCX);
+			if (r15 < -98) {
+				parse_bne(code);
+				code_length = 0;
+			}
 		}
-		printf("x0 = %lu\n", x[0]);
-		printf("x1 = %lu\n", x[1]);
-		printf("x2 = %lu\n", x[2]);
 		pc++;
 	}
 	return 0;

@@ -1,0 +1,1811 @@
+MOV instruction detected!
+MOV rd = 0
+MOV imm12 = 0
+x[rd] = 0
+MOV instruction detected!
+MOV rd = 1
+MOV imm12 = 0
+x[rd] = 0
+MOV instruction detected!
+MOV rd = 2
+MOV imm12 = 2
+x[rd] = 2
+Add instruction detected!
+Code = 0x91000421
+Add rn = 1
+Add rd = 1
+Add imm12 = 1
+Add register instruction detected!
+Add rd = 0
+Add rn = 0
+Add rm = 2
+CMP instruction detected!
+CMP rn = 1
+CMP imm12 = 100
+x[1] = 1
+cache code size: 41
+48 c7 c0 0 0 0 0 48 c7 c3 0 0 0 0 48 c7 c1 2 0 0 0 48 c7 c2 1 0 0 0 48 1 d3 48 1 c8 49 89 df 49 83 ef 64 r15 = -99
+===============================
+Saved registers rax = 2, rbx = 1, rcx = 2
+BNE instruction detected!
+Add instruction detected!
+Code = 0x91000421
+Add rn = 1
+Add rd = 1
+Add imm12 = 1
+Add register instruction detected!
+Add rd = 0
+Add rn = 0
+Add rm = 2
+CMP instruction detected!
+CMP rn = 1
+CMP imm12 = 100
+x[1] = 2
+cache code size: 20
+48 c7 c2 1 0 0 0 48 1 d3 48 1 c8 49 89 df 49 83 ef 64 r15 = -98
+===============================
+Saved registers rax = 234417794281536, rbx = 2, rcx = 94630053548096
+BNE instruction detected!
+Add instruction detected!
+Code = 0x91000421
+Add rn = 1
+Add rd = 1
+Add imm12 = 1
+Add register instruction detected!
+Add rd = 0
+Add rn = 0
+Add rm = 2
+CMP instruction detected!
+CMP rn = 1
+CMP imm12 = 100
+x[1] = 3
+cache code size: 20
+48 c7 c2 1 0 0 0 48 1 d3 48 1 c8 49 89 df 49 83 ef 64 r15 = -97
+===============================
+Saved registers rax = 234417794277440, rbx = 3, rcx = 94630053548096
+BNE instruction detected!
+Add instruction detected!
+Code = 0x91000421
+Add rn = 1
+Add rd = 1
+Add imm12 = 1
+Add register instruction detected!
+Add rd = 0
+Add rn = 0
+Add rm = 2
+CMP instruction detected!
+CMP rn = 1
+CMP imm12 = 100
+x[1] = 4
+cache code size: 20
+48 c7 c2 1 0 0 0 48 1 d3 48 1 c8 49 89 df 49 83 ef 64 r15 = -96
+===============================
+Saved registers rax = 234417794273344, rbx = 4, rcx = 94630053548096
+BNE instruction detected!
+Add instruction detected!
+Code = 0x91000421
+Add rn = 1
+Add rd = 1
+Add imm12 = 1
+Add register instruction detected!
+Add rd = 0
+Add rn = 0
+Add rm = 2
+CMP instruction detected!
+CMP rn = 1
+CMP imm12 = 100
+x[1] = 5
+cache code size: 20
+48 c7 c2 1 0 0 0 48 1 d3 48 1 c8 49 89 df 49 83 ef 64 r15 = -95
+===============================
+Saved registers rax = 234417794269248, rbx = 5, rcx = 94630053548096
+BNE instruction detected!
+Add instruction detected!
+Code = 0x91000421
+Add rn = 1
+Add rd = 1
+Add imm12 = 1
+Add register instruction detected!
+Add rd = 0
+Add rn = 0
+Add rm = 2
+CMP instruction detected!
+CMP rn = 1
+CMP imm12 = 100
+x[1] = 6
+cache code size: 20
+48 c7 c2 1 0 0 0 48 1 d3 48 1 c8 49 89 df 49 83 ef 64 r15 = -94
+===============================
+Saved registers rax = 234417794265152, rbx = 6, rcx = 94630053548096
+BNE instruction detected!
+Add instruction detected!
+Code = 0x91000421
+Add rn = 1
+Add rd = 1
+Add imm12 = 1
+Add register instruction detected!
+Add rd = 0
+Add rn = 0
+Add rm = 2
+CMP instruction detected!
+CMP rn = 1
+CMP imm12 = 100
+x[1] = 7
+cache code size: 20
+48 c7 c2 1 0 0 0 48 1 d3 48 1 c8 49 89 df 49 83 ef 64 r15 = -93
+===============================
+Saved registers rax = 234417794261056, rbx = 7, rcx = 94630053548096
+BNE instruction detected!
+Add instruction detected!
+Code = 0x91000421
+Add rn = 1
+Add rd = 1
+Add imm12 = 1
+Add register instruction detected!
+Add rd = 0
+Add rn = 0
+Add rm = 2
+CMP instruction detected!
+CMP rn = 1
+CMP imm12 = 100
+x[1] = 8
+cache code size: 20
+48 c7 c2 1 0 0 0 48 1 d3 48 1 c8 49 89 df 49 83 ef 64 r15 = -92
+===============================
+Saved registers rax = 234417794256960, rbx = 8, rcx = 94630053548096
+BNE instruction detected!
+Add instruction detected!
+Code = 0x91000421
+Add rn = 1
+Add rd = 1
+Add imm12 = 1
+Add register instruction detected!
+Add rd = 0
+Add rn = 0
+Add rm = 2
+CMP instruction detected!
+CMP rn = 1
+CMP imm12 = 100
+x[1] = 9
+cache code size: 20
+48 c7 c2 1 0 0 0 48 1 d3 48 1 c8 49 89 df 49 83 ef 64 r15 = -91
+===============================
+Saved registers rax = 234417794252864, rbx = 9, rcx = 94630053548096
+BNE instruction detected!
+Add instruction detected!
+Code = 0x91000421
+Add rn = 1
+Add rd = 1
+Add imm12 = 1
+Add register instruction detected!
+Add rd = 0
+Add rn = 0
+Add rm = 2
+CMP instruction detected!
+CMP rn = 1
+CMP imm12 = 100
+x[1] = 10
+cache code size: 20
+48 c7 c2 1 0 0 0 48 1 d3 48 1 c8 49 89 df 49 83 ef 64 r15 = -90
+===============================
+Saved registers rax = 234417794248768, rbx = 10, rcx = 94630053548096
+BNE instruction detected!
+Add instruction detected!
+Code = 0x91000421
+Add rn = 1
+Add rd = 1
+Add imm12 = 1
+Add register instruction detected!
+Add rd = 0
+Add rn = 0
+Add rm = 2
+CMP instruction detected!
+CMP rn = 1
+CMP imm12 = 100
+x[1] = 11
+cache code size: 20
+48 c7 c2 1 0 0 0 48 1 d3 48 1 c8 49 89 df 49 83 ef 64 r15 = -89
+===============================
+Saved registers rax = 234417794244672, rbx = 11, rcx = 94630053548096
+BNE instruction detected!
+Add instruction detected!
+Code = 0x91000421
+Add rn = 1
+Add rd = 1
+Add imm12 = 1
+Add register instruction detected!
+Add rd = 0
+Add rn = 0
+Add rm = 2
+CMP instruction detected!
+CMP rn = 1
+CMP imm12 = 100
+x[1] = 12
+cache code size: 20
+48 c7 c2 1 0 0 0 48 1 d3 48 1 c8 49 89 df 49 83 ef 64 r15 = -88
+===============================
+Saved registers rax = 234417794240576, rbx = 12, rcx = 94630053548096
+BNE instruction detected!
+Add instruction detected!
+Code = 0x91000421
+Add rn = 1
+Add rd = 1
+Add imm12 = 1
+Add register instruction detected!
+Add rd = 0
+Add rn = 0
+Add rm = 2
+CMP instruction detected!
+CMP rn = 1
+CMP imm12 = 100
+x[1] = 13
+cache code size: 20
+48 c7 c2 1 0 0 0 48 1 d3 48 1 c8 49 89 df 49 83 ef 64 r15 = -87
+===============================
+Saved registers rax = 234417794236480, rbx = 13, rcx = 94630053548096
+BNE instruction detected!
+Add instruction detected!
+Code = 0x91000421
+Add rn = 1
+Add rd = 1
+Add imm12 = 1
+Add register instruction detected!
+Add rd = 0
+Add rn = 0
+Add rm = 2
+CMP instruction detected!
+CMP rn = 1
+CMP imm12 = 100
+x[1] = 14
+cache code size: 20
+48 c7 c2 1 0 0 0 48 1 d3 48 1 c8 49 89 df 49 83 ef 64 r15 = -86
+===============================
+Saved registers rax = 234417794232384, rbx = 14, rcx = 94630053548096
+BNE instruction detected!
+Add instruction detected!
+Code = 0x91000421
+Add rn = 1
+Add rd = 1
+Add imm12 = 1
+Add register instruction detected!
+Add rd = 0
+Add rn = 0
+Add rm = 2
+CMP instruction detected!
+CMP rn = 1
+CMP imm12 = 100
+x[1] = 15
+cache code size: 20
+48 c7 c2 1 0 0 0 48 1 d3 48 1 c8 49 89 df 49 83 ef 64 r15 = -85
+===============================
+Saved registers rax = 234417794228288, rbx = 15, rcx = 94630053548096
+BNE instruction detected!
+Add instruction detected!
+Code = 0x91000421
+Add rn = 1
+Add rd = 1
+Add imm12 = 1
+Add register instruction detected!
+Add rd = 0
+Add rn = 0
+Add rm = 2
+CMP instruction detected!
+CMP rn = 1
+CMP imm12 = 100
+x[1] = 16
+cache code size: 20
+48 c7 c2 1 0 0 0 48 1 d3 48 1 c8 49 89 df 49 83 ef 64 r15 = -84
+===============================
+Saved registers rax = 234417794224192, rbx = 16, rcx = 94630053548096
+BNE instruction detected!
+Add instruction detected!
+Code = 0x91000421
+Add rn = 1
+Add rd = 1
+Add imm12 = 1
+Add register instruction detected!
+Add rd = 0
+Add rn = 0
+Add rm = 2
+CMP instruction detected!
+CMP rn = 1
+CMP imm12 = 100
+x[1] = 17
+cache code size: 20
+48 c7 c2 1 0 0 0 48 1 d3 48 1 c8 49 89 df 49 83 ef 64 r15 = -83
+===============================
+Saved registers rax = 234417794220096, rbx = 17, rcx = 94630053548096
+BNE instruction detected!
+Add instruction detected!
+Code = 0x91000421
+Add rn = 1
+Add rd = 1
+Add imm12 = 1
+Add register instruction detected!
+Add rd = 0
+Add rn = 0
+Add rm = 2
+CMP instruction detected!
+CMP rn = 1
+CMP imm12 = 100
+x[1] = 18
+cache code size: 20
+48 c7 c2 1 0 0 0 48 1 d3 48 1 c8 49 89 df 49 83 ef 64 r15 = -82
+===============================
+Saved registers rax = 234417794216000, rbx = 18, rcx = 94630053548096
+BNE instruction detected!
+Add instruction detected!
+Code = 0x91000421
+Add rn = 1
+Add rd = 1
+Add imm12 = 1
+Add register instruction detected!
+Add rd = 0
+Add rn = 0
+Add rm = 2
+CMP instruction detected!
+CMP rn = 1
+CMP imm12 = 100
+x[1] = 19
+cache code size: 20
+48 c7 c2 1 0 0 0 48 1 d3 48 1 c8 49 89 df 49 83 ef 64 r15 = -81
+===============================
+Saved registers rax = 234417794211904, rbx = 19, rcx = 94630053548096
+BNE instruction detected!
+Add instruction detected!
+Code = 0x91000421
+Add rn = 1
+Add rd = 1
+Add imm12 = 1
+Add register instruction detected!
+Add rd = 0
+Add rn = 0
+Add rm = 2
+CMP instruction detected!
+CMP rn = 1
+CMP imm12 = 100
+x[1] = 20
+cache code size: 20
+48 c7 c2 1 0 0 0 48 1 d3 48 1 c8 49 89 df 49 83 ef 64 r15 = -80
+===============================
+Saved registers rax = 234417794207808, rbx = 20, rcx = 94630053548096
+BNE instruction detected!
+Add instruction detected!
+Code = 0x91000421
+Add rn = 1
+Add rd = 1
+Add imm12 = 1
+Add register instruction detected!
+Add rd = 0
+Add rn = 0
+Add rm = 2
+CMP instruction detected!
+CMP rn = 1
+CMP imm12 = 100
+x[1] = 21
+cache code size: 20
+48 c7 c2 1 0 0 0 48 1 d3 48 1 c8 49 89 df 49 83 ef 64 r15 = -79
+===============================
+Saved registers rax = 234417794203712, rbx = 21, rcx = 94630053548096
+BNE instruction detected!
+Add instruction detected!
+Code = 0x91000421
+Add rn = 1
+Add rd = 1
+Add imm12 = 1
+Add register instruction detected!
+Add rd = 0
+Add rn = 0
+Add rm = 2
+CMP instruction detected!
+CMP rn = 1
+CMP imm12 = 100
+x[1] = 22
+cache code size: 20
+48 c7 c2 1 0 0 0 48 1 d3 48 1 c8 49 89 df 49 83 ef 64 r15 = -78
+===============================
+Saved registers rax = 234417794199616, rbx = 22, rcx = 94630053548096
+BNE instruction detected!
+Add instruction detected!
+Code = 0x91000421
+Add rn = 1
+Add rd = 1
+Add imm12 = 1
+Add register instruction detected!
+Add rd = 0
+Add rn = 0
+Add rm = 2
+CMP instruction detected!
+CMP rn = 1
+CMP imm12 = 100
+x[1] = 23
+cache code size: 20
+48 c7 c2 1 0 0 0 48 1 d3 48 1 c8 49 89 df 49 83 ef 64 r15 = -77
+===============================
+Saved registers rax = 234417794195520, rbx = 23, rcx = 94630053548096
+BNE instruction detected!
+Add instruction detected!
+Code = 0x91000421
+Add rn = 1
+Add rd = 1
+Add imm12 = 1
+Add register instruction detected!
+Add rd = 0
+Add rn = 0
+Add rm = 2
+CMP instruction detected!
+CMP rn = 1
+CMP imm12 = 100
+x[1] = 24
+cache code size: 20
+48 c7 c2 1 0 0 0 48 1 d3 48 1 c8 49 89 df 49 83 ef 64 r15 = -76
+===============================
+Saved registers rax = 234417794191424, rbx = 24, rcx = 94630053548096
+BNE instruction detected!
+Add instruction detected!
+Code = 0x91000421
+Add rn = 1
+Add rd = 1
+Add imm12 = 1
+Add register instruction detected!
+Add rd = 0
+Add rn = 0
+Add rm = 2
+CMP instruction detected!
+CMP rn = 1
+CMP imm12 = 100
+x[1] = 25
+cache code size: 20
+48 c7 c2 1 0 0 0 48 1 d3 48 1 c8 49 89 df 49 83 ef 64 r15 = -75
+===============================
+Saved registers rax = 234417794187328, rbx = 25, rcx = 94630053548096
+BNE instruction detected!
+Add instruction detected!
+Code = 0x91000421
+Add rn = 1
+Add rd = 1
+Add imm12 = 1
+Add register instruction detected!
+Add rd = 0
+Add rn = 0
+Add rm = 2
+CMP instruction detected!
+CMP rn = 1
+CMP imm12 = 100
+x[1] = 26
+cache code size: 20
+48 c7 c2 1 0 0 0 48 1 d3 48 1 c8 49 89 df 49 83 ef 64 r15 = -74
+===============================
+Saved registers rax = 234417794170944, rbx = 26, rcx = 94630053548096
+BNE instruction detected!
+Add instruction detected!
+Code = 0x91000421
+Add rn = 1
+Add rd = 1
+Add imm12 = 1
+Add register instruction detected!
+Add rd = 0
+Add rn = 0
+Add rm = 2
+CMP instruction detected!
+CMP rn = 1
+CMP imm12 = 100
+x[1] = 27
+cache code size: 20
+48 c7 c2 1 0 0 0 48 1 d3 48 1 c8 49 89 df 49 83 ef 64 r15 = -73
+===============================
+Saved registers rax = 234417794166848, rbx = 27, rcx = 94630053548096
+BNE instruction detected!
+Add instruction detected!
+Code = 0x91000421
+Add rn = 1
+Add rd = 1
+Add imm12 = 1
+Add register instruction detected!
+Add rd = 0
+Add rn = 0
+Add rm = 2
+CMP instruction detected!
+CMP rn = 1
+CMP imm12 = 100
+x[1] = 28
+cache code size: 20
+48 c7 c2 1 0 0 0 48 1 d3 48 1 c8 49 89 df 49 83 ef 64 r15 = -72
+===============================
+Saved registers rax = 234417794162752, rbx = 28, rcx = 94630053548096
+BNE instruction detected!
+Add instruction detected!
+Code = 0x91000421
+Add rn = 1
+Add rd = 1
+Add imm12 = 1
+Add register instruction detected!
+Add rd = 0
+Add rn = 0
+Add rm = 2
+CMP instruction detected!
+CMP rn = 1
+CMP imm12 = 100
+x[1] = 29
+cache code size: 20
+48 c7 c2 1 0 0 0 48 1 d3 48 1 c8 49 89 df 49 83 ef 64 r15 = -71
+===============================
+Saved registers rax = 234417794158656, rbx = 29, rcx = 94630053548096
+BNE instruction detected!
+Add instruction detected!
+Code = 0x91000421
+Add rn = 1
+Add rd = 1
+Add imm12 = 1
+Add register instruction detected!
+Add rd = 0
+Add rn = 0
+Add rm = 2
+CMP instruction detected!
+CMP rn = 1
+CMP imm12 = 100
+x[1] = 30
+cache code size: 20
+48 c7 c2 1 0 0 0 48 1 d3 48 1 c8 49 89 df 49 83 ef 64 r15 = -70
+===============================
+Saved registers rax = 234417794154560, rbx = 30, rcx = 94630053548096
+BNE instruction detected!
+Add instruction detected!
+Code = 0x91000421
+Add rn = 1
+Add rd = 1
+Add imm12 = 1
+Add register instruction detected!
+Add rd = 0
+Add rn = 0
+Add rm = 2
+CMP instruction detected!
+CMP rn = 1
+CMP imm12 = 100
+x[1] = 31
+cache code size: 20
+48 c7 c2 1 0 0 0 48 1 d3 48 1 c8 49 89 df 49 83 ef 64 r15 = -69
+===============================
+Saved registers rax = 234417794150464, rbx = 31, rcx = 94630053548096
+BNE instruction detected!
+Add instruction detected!
+Code = 0x91000421
+Add rn = 1
+Add rd = 1
+Add imm12 = 1
+Add register instruction detected!
+Add rd = 0
+Add rn = 0
+Add rm = 2
+CMP instruction detected!
+CMP rn = 1
+CMP imm12 = 100
+x[1] = 32
+cache code size: 20
+48 c7 c2 1 0 0 0 48 1 d3 48 1 c8 49 89 df 49 83 ef 64 r15 = -68
+===============================
+Saved registers rax = 234417794146368, rbx = 32, rcx = 94630053548096
+BNE instruction detected!
+Add instruction detected!
+Code = 0x91000421
+Add rn = 1
+Add rd = 1
+Add imm12 = 1
+Add register instruction detected!
+Add rd = 0
+Add rn = 0
+Add rm = 2
+CMP instruction detected!
+CMP rn = 1
+CMP imm12 = 100
+x[1] = 33
+cache code size: 20
+48 c7 c2 1 0 0 0 48 1 d3 48 1 c8 49 89 df 49 83 ef 64 r15 = -67
+===============================
+Saved registers rax = 234417794142272, rbx = 33, rcx = 94630053548096
+BNE instruction detected!
+Add instruction detected!
+Code = 0x91000421
+Add rn = 1
+Add rd = 1
+Add imm12 = 1
+Add register instruction detected!
+Add rd = 0
+Add rn = 0
+Add rm = 2
+CMP instruction detected!
+CMP rn = 1
+CMP imm12 = 100
+x[1] = 34
+cache code size: 20
+48 c7 c2 1 0 0 0 48 1 d3 48 1 c8 49 89 df 49 83 ef 64 r15 = -66
+===============================
+Saved registers rax = 234417794138176, rbx = 34, rcx = 94630053548096
+BNE instruction detected!
+Add instruction detected!
+Code = 0x91000421
+Add rn = 1
+Add rd = 1
+Add imm12 = 1
+Add register instruction detected!
+Add rd = 0
+Add rn = 0
+Add rm = 2
+CMP instruction detected!
+CMP rn = 1
+CMP imm12 = 100
+x[1] = 35
+cache code size: 20
+48 c7 c2 1 0 0 0 48 1 d3 48 1 c8 49 89 df 49 83 ef 64 r15 = -65
+===============================
+Saved registers rax = 234417794134080, rbx = 35, rcx = 94630053548096
+BNE instruction detected!
+Add instruction detected!
+Code = 0x91000421
+Add rn = 1
+Add rd = 1
+Add imm12 = 1
+Add register instruction detected!
+Add rd = 0
+Add rn = 0
+Add rm = 2
+CMP instruction detected!
+CMP rn = 1
+CMP imm12 = 100
+x[1] = 36
+cache code size: 20
+48 c7 c2 1 0 0 0 48 1 d3 48 1 c8 49 89 df 49 83 ef 64 r15 = -64
+===============================
+Saved registers rax = 234417794129984, rbx = 36, rcx = 94630053548096
+BNE instruction detected!
+Add instruction detected!
+Code = 0x91000421
+Add rn = 1
+Add rd = 1
+Add imm12 = 1
+Add register instruction detected!
+Add rd = 0
+Add rn = 0
+Add rm = 2
+CMP instruction detected!
+CMP rn = 1
+CMP imm12 = 100
+x[1] = 37
+cache code size: 20
+48 c7 c2 1 0 0 0 48 1 d3 48 1 c8 49 89 df 49 83 ef 64 r15 = -63
+===============================
+Saved registers rax = 234417794125888, rbx = 37, rcx = 94630053548096
+BNE instruction detected!
+Add instruction detected!
+Code = 0x91000421
+Add rn = 1
+Add rd = 1
+Add imm12 = 1
+Add register instruction detected!
+Add rd = 0
+Add rn = 0
+Add rm = 2
+CMP instruction detected!
+CMP rn = 1
+CMP imm12 = 100
+x[1] = 38
+cache code size: 20
+48 c7 c2 1 0 0 0 48 1 d3 48 1 c8 49 89 df 49 83 ef 64 r15 = -62
+===============================
+Saved registers rax = 234417794121792, rbx = 38, rcx = 94630053548096
+BNE instruction detected!
+Add instruction detected!
+Code = 0x91000421
+Add rn = 1
+Add rd = 1
+Add imm12 = 1
+Add register instruction detected!
+Add rd = 0
+Add rn = 0
+Add rm = 2
+CMP instruction detected!
+CMP rn = 1
+CMP imm12 = 100
+x[1] = 39
+cache code size: 20
+48 c7 c2 1 0 0 0 48 1 d3 48 1 c8 49 89 df 49 83 ef 64 r15 = -61
+===============================
+Saved registers rax = 234417794117696, rbx = 39, rcx = 94630053548096
+BNE instruction detected!
+Add instruction detected!
+Code = 0x91000421
+Add rn = 1
+Add rd = 1
+Add imm12 = 1
+Add register instruction detected!
+Add rd = 0
+Add rn = 0
+Add rm = 2
+CMP instruction detected!
+CMP rn = 1
+CMP imm12 = 100
+x[1] = 40
+cache code size: 20
+48 c7 c2 1 0 0 0 48 1 d3 48 1 c8 49 89 df 49 83 ef 64 r15 = -60
+===============================
+Saved registers rax = 234417794113600, rbx = 40, rcx = 94630053548096
+BNE instruction detected!
+Add instruction detected!
+Code = 0x91000421
+Add rn = 1
+Add rd = 1
+Add imm12 = 1
+Add register instruction detected!
+Add rd = 0
+Add rn = 0
+Add rm = 2
+CMP instruction detected!
+CMP rn = 1
+CMP imm12 = 100
+x[1] = 41
+cache code size: 20
+48 c7 c2 1 0 0 0 48 1 d3 48 1 c8 49 89 df 49 83 ef 64 r15 = -59
+===============================
+Saved registers rax = 234417794109504, rbx = 41, rcx = 94630053548096
+BNE instruction detected!
+Add instruction detected!
+Code = 0x91000421
+Add rn = 1
+Add rd = 1
+Add imm12 = 1
+Add register instruction detected!
+Add rd = 0
+Add rn = 0
+Add rm = 2
+CMP instruction detected!
+CMP rn = 1
+CMP imm12 = 100
+x[1] = 42
+cache code size: 20
+48 c7 c2 1 0 0 0 48 1 d3 48 1 c8 49 89 df 49 83 ef 64 r15 = -58
+===============================
+Saved registers rax = 234417794105408, rbx = 42, rcx = 94630053548096
+BNE instruction detected!
+Add instruction detected!
+Code = 0x91000421
+Add rn = 1
+Add rd = 1
+Add imm12 = 1
+Add register instruction detected!
+Add rd = 0
+Add rn = 0
+Add rm = 2
+CMP instruction detected!
+CMP rn = 1
+CMP imm12 = 100
+x[1] = 43
+cache code size: 20
+48 c7 c2 1 0 0 0 48 1 d3 48 1 c8 49 89 df 49 83 ef 64 r15 = -57
+===============================
+Saved registers rax = 234417794101312, rbx = 43, rcx = 94630053548096
+BNE instruction detected!
+Add instruction detected!
+Code = 0x91000421
+Add rn = 1
+Add rd = 1
+Add imm12 = 1
+Add register instruction detected!
+Add rd = 0
+Add rn = 0
+Add rm = 2
+CMP instruction detected!
+CMP rn = 1
+CMP imm12 = 100
+x[1] = 44
+cache code size: 20
+48 c7 c2 1 0 0 0 48 1 d3 48 1 c8 49 89 df 49 83 ef 64 r15 = -56
+===============================
+Saved registers rax = 234417794097216, rbx = 44, rcx = 94630053548096
+BNE instruction detected!
+Add instruction detected!
+Code = 0x91000421
+Add rn = 1
+Add rd = 1
+Add imm12 = 1
+Add register instruction detected!
+Add rd = 0
+Add rn = 0
+Add rm = 2
+CMP instruction detected!
+CMP rn = 1
+CMP imm12 = 100
+x[1] = 45
+cache code size: 20
+48 c7 c2 1 0 0 0 48 1 d3 48 1 c8 49 89 df 49 83 ef 64 r15 = -55
+===============================
+Saved registers rax = 234417794093120, rbx = 45, rcx = 94630053548096
+BNE instruction detected!
+Add instruction detected!
+Code = 0x91000421
+Add rn = 1
+Add rd = 1
+Add imm12 = 1
+Add register instruction detected!
+Add rd = 0
+Add rn = 0
+Add rm = 2
+CMP instruction detected!
+CMP rn = 1
+CMP imm12 = 100
+x[1] = 46
+cache code size: 20
+48 c7 c2 1 0 0 0 48 1 d3 48 1 c8 49 89 df 49 83 ef 64 r15 = -54
+===============================
+Saved registers rax = 234417794089024, rbx = 46, rcx = 94630053548096
+BNE instruction detected!
+Add instruction detected!
+Code = 0x91000421
+Add rn = 1
+Add rd = 1
+Add imm12 = 1
+Add register instruction detected!
+Add rd = 0
+Add rn = 0
+Add rm = 2
+CMP instruction detected!
+CMP rn = 1
+CMP imm12 = 100
+x[1] = 47
+cache code size: 20
+48 c7 c2 1 0 0 0 48 1 d3 48 1 c8 49 89 df 49 83 ef 64 r15 = -53
+===============================
+Saved registers rax = 234417794084928, rbx = 47, rcx = 94630053548096
+BNE instruction detected!
+Add instruction detected!
+Code = 0x91000421
+Add rn = 1
+Add rd = 1
+Add imm12 = 1
+Add register instruction detected!
+Add rd = 0
+Add rn = 0
+Add rm = 2
+CMP instruction detected!
+CMP rn = 1
+CMP imm12 = 100
+x[1] = 48
+cache code size: 20
+48 c7 c2 1 0 0 0 48 1 d3 48 1 c8 49 89 df 49 83 ef 64 r15 = -52
+===============================
+Saved registers rax = 234417794080832, rbx = 48, rcx = 94630053548096
+BNE instruction detected!
+Add instruction detected!
+Code = 0x91000421
+Add rn = 1
+Add rd = 1
+Add imm12 = 1
+Add register instruction detected!
+Add rd = 0
+Add rn = 0
+Add rm = 2
+CMP instruction detected!
+CMP rn = 1
+CMP imm12 = 100
+x[1] = 49
+cache code size: 20
+48 c7 c2 1 0 0 0 48 1 d3 48 1 c8 49 89 df 49 83 ef 64 r15 = -51
+===============================
+Saved registers rax = 234417794076736, rbx = 49, rcx = 94630053548096
+BNE instruction detected!
+Add instruction detected!
+Code = 0x91000421
+Add rn = 1
+Add rd = 1
+Add imm12 = 1
+Add register instruction detected!
+Add rd = 0
+Add rn = 0
+Add rm = 2
+CMP instruction detected!
+CMP rn = 1
+CMP imm12 = 100
+x[1] = 50
+cache code size: 20
+48 c7 c2 1 0 0 0 48 1 d3 48 1 c8 49 89 df 49 83 ef 64 r15 = -50
+===============================
+Saved registers rax = 234417794072640, rbx = 50, rcx = 94630053548096
+BNE instruction detected!
+Add instruction detected!
+Code = 0x91000421
+Add rn = 1
+Add rd = 1
+Add imm12 = 1
+Add register instruction detected!
+Add rd = 0
+Add rn = 0
+Add rm = 2
+CMP instruction detected!
+CMP rn = 1
+CMP imm12 = 100
+x[1] = 51
+cache code size: 20
+48 c7 c2 1 0 0 0 48 1 d3 48 1 c8 49 89 df 49 83 ef 64 r15 = -49
+===============================
+Saved registers rax = 234417794068544, rbx = 51, rcx = 94630053548096
+BNE instruction detected!
+Add instruction detected!
+Code = 0x91000421
+Add rn = 1
+Add rd = 1
+Add imm12 = 1
+Add register instruction detected!
+Add rd = 0
+Add rn = 0
+Add rm = 2
+CMP instruction detected!
+CMP rn = 1
+CMP imm12 = 100
+x[1] = 52
+cache code size: 20
+48 c7 c2 1 0 0 0 48 1 d3 48 1 c8 49 89 df 49 83 ef 64 r15 = -48
+===============================
+Saved registers rax = 234417794064448, rbx = 52, rcx = 94630053548096
+BNE instruction detected!
+Add instruction detected!
+Code = 0x91000421
+Add rn = 1
+Add rd = 1
+Add imm12 = 1
+Add register instruction detected!
+Add rd = 0
+Add rn = 0
+Add rm = 2
+CMP instruction detected!
+CMP rn = 1
+CMP imm12 = 100
+x[1] = 53
+cache code size: 20
+48 c7 c2 1 0 0 0 48 1 d3 48 1 c8 49 89 df 49 83 ef 64 r15 = -47
+===============================
+Saved registers rax = 234417794060352, rbx = 53, rcx = 94630053548096
+BNE instruction detected!
+Add instruction detected!
+Code = 0x91000421
+Add rn = 1
+Add rd = 1
+Add imm12 = 1
+Add register instruction detected!
+Add rd = 0
+Add rn = 0
+Add rm = 2
+CMP instruction detected!
+CMP rn = 1
+CMP imm12 = 100
+x[1] = 54
+cache code size: 20
+48 c7 c2 1 0 0 0 48 1 d3 48 1 c8 49 89 df 49 83 ef 64 r15 = -46
+===============================
+Saved registers rax = 234417794056256, rbx = 54, rcx = 94630053548096
+BNE instruction detected!
+Add instruction detected!
+Code = 0x91000421
+Add rn = 1
+Add rd = 1
+Add imm12 = 1
+Add register instruction detected!
+Add rd = 0
+Add rn = 0
+Add rm = 2
+CMP instruction detected!
+CMP rn = 1
+CMP imm12 = 100
+x[1] = 55
+cache code size: 20
+48 c7 c2 1 0 0 0 48 1 d3 48 1 c8 49 89 df 49 83 ef 64 r15 = -45
+===============================
+Saved registers rax = 234417794052160, rbx = 55, rcx = 94630053548096
+BNE instruction detected!
+Add instruction detected!
+Code = 0x91000421
+Add rn = 1
+Add rd = 1
+Add imm12 = 1
+Add register instruction detected!
+Add rd = 0
+Add rn = 0
+Add rm = 2
+CMP instruction detected!
+CMP rn = 1
+CMP imm12 = 100
+x[1] = 56
+cache code size: 20
+48 c7 c2 1 0 0 0 48 1 d3 48 1 c8 49 89 df 49 83 ef 64 r15 = -44
+===============================
+Saved registers rax = 234417794048064, rbx = 56, rcx = 94630053548096
+BNE instruction detected!
+Add instruction detected!
+Code = 0x91000421
+Add rn = 1
+Add rd = 1
+Add imm12 = 1
+Add register instruction detected!
+Add rd = 0
+Add rn = 0
+Add rm = 2
+CMP instruction detected!
+CMP rn = 1
+CMP imm12 = 100
+x[1] = 57
+cache code size: 20
+48 c7 c2 1 0 0 0 48 1 d3 48 1 c8 49 89 df 49 83 ef 64 r15 = -43
+===============================
+Saved registers rax = 234417794043968, rbx = 57, rcx = 94630053548096
+BNE instruction detected!
+Add instruction detected!
+Code = 0x91000421
+Add rn = 1
+Add rd = 1
+Add imm12 = 1
+Add register instruction detected!
+Add rd = 0
+Add rn = 0
+Add rm = 2
+CMP instruction detected!
+CMP rn = 1
+CMP imm12 = 100
+x[1] = 58
+cache code size: 20
+48 c7 c2 1 0 0 0 48 1 d3 48 1 c8 49 89 df 49 83 ef 64 r15 = -42
+===============================
+Saved registers rax = 234417794039872, rbx = 58, rcx = 94630053548096
+BNE instruction detected!
+Add instruction detected!
+Code = 0x91000421
+Add rn = 1
+Add rd = 1
+Add imm12 = 1
+Add register instruction detected!
+Add rd = 0
+Add rn = 0
+Add rm = 2
+CMP instruction detected!
+CMP rn = 1
+CMP imm12 = 100
+x[1] = 59
+cache code size: 20
+48 c7 c2 1 0 0 0 48 1 d3 48 1 c8 49 89 df 49 83 ef 64 r15 = -41
+===============================
+Saved registers rax = 234417794035776, rbx = 59, rcx = 94630053548096
+BNE instruction detected!
+Add instruction detected!
+Code = 0x91000421
+Add rn = 1
+Add rd = 1
+Add imm12 = 1
+Add register instruction detected!
+Add rd = 0
+Add rn = 0
+Add rm = 2
+CMP instruction detected!
+CMP rn = 1
+CMP imm12 = 100
+x[1] = 60
+cache code size: 20
+48 c7 c2 1 0 0 0 48 1 d3 48 1 c8 49 89 df 49 83 ef 64 r15 = -40
+===============================
+Saved registers rax = 234417794031680, rbx = 60, rcx = 94630053548096
+BNE instruction detected!
+Add instruction detected!
+Code = 0x91000421
+Add rn = 1
+Add rd = 1
+Add imm12 = 1
+Add register instruction detected!
+Add rd = 0
+Add rn = 0
+Add rm = 2
+CMP instruction detected!
+CMP rn = 1
+CMP imm12 = 100
+x[1] = 61
+cache code size: 20
+48 c7 c2 1 0 0 0 48 1 d3 48 1 c8 49 89 df 49 83 ef 64 r15 = -39
+===============================
+Saved registers rax = 234417794027584, rbx = 61, rcx = 94630053548096
+BNE instruction detected!
+Add instruction detected!
+Code = 0x91000421
+Add rn = 1
+Add rd = 1
+Add imm12 = 1
+Add register instruction detected!
+Add rd = 0
+Add rn = 0
+Add rm = 2
+CMP instruction detected!
+CMP rn = 1
+CMP imm12 = 100
+x[1] = 62
+cache code size: 20
+48 c7 c2 1 0 0 0 48 1 d3 48 1 c8 49 89 df 49 83 ef 64 r15 = -38
+===============================
+Saved registers rax = 234417794023488, rbx = 62, rcx = 94630053548096
+BNE instruction detected!
+Add instruction detected!
+Code = 0x91000421
+Add rn = 1
+Add rd = 1
+Add imm12 = 1
+Add register instruction detected!
+Add rd = 0
+Add rn = 0
+Add rm = 2
+CMP instruction detected!
+CMP rn = 1
+CMP imm12 = 100
+x[1] = 63
+cache code size: 20
+48 c7 c2 1 0 0 0 48 1 d3 48 1 c8 49 89 df 49 83 ef 64 r15 = -37
+===============================
+Saved registers rax = 234417794019392, rbx = 63, rcx = 94630053548096
+BNE instruction detected!
+Add instruction detected!
+Code = 0x91000421
+Add rn = 1
+Add rd = 1
+Add imm12 = 1
+Add register instruction detected!
+Add rd = 0
+Add rn = 0
+Add rm = 2
+CMP instruction detected!
+CMP rn = 1
+CMP imm12 = 100
+x[1] = 64
+cache code size: 20
+48 c7 c2 1 0 0 0 48 1 d3 48 1 c8 49 89 df 49 83 ef 64 r15 = -36
+===============================
+Saved registers rax = 234417794015296, rbx = 64, rcx = 94630053548096
+BNE instruction detected!
+Add instruction detected!
+Code = 0x91000421
+Add rn = 1
+Add rd = 1
+Add imm12 = 1
+Add register instruction detected!
+Add rd = 0
+Add rn = 0
+Add rm = 2
+CMP instruction detected!
+CMP rn = 1
+CMP imm12 = 100
+x[1] = 65
+cache code size: 20
+48 c7 c2 1 0 0 0 48 1 d3 48 1 c8 49 89 df 49 83 ef 64 r15 = -35
+===============================
+Saved registers rax = 234417794011200, rbx = 65, rcx = 94630053548096
+BNE instruction detected!
+Add instruction detected!
+Code = 0x91000421
+Add rn = 1
+Add rd = 1
+Add imm12 = 1
+Add register instruction detected!
+Add rd = 0
+Add rn = 0
+Add rm = 2
+CMP instruction detected!
+CMP rn = 1
+CMP imm12 = 100
+x[1] = 66
+cache code size: 20
+48 c7 c2 1 0 0 0 48 1 d3 48 1 c8 49 89 df 49 83 ef 64 r15 = -34
+===============================
+Saved registers rax = 234417794007104, rbx = 66, rcx = 94630053548096
+BNE instruction detected!
+Add instruction detected!
+Code = 0x91000421
+Add rn = 1
+Add rd = 1
+Add imm12 = 1
+Add register instruction detected!
+Add rd = 0
+Add rn = 0
+Add rm = 2
+CMP instruction detected!
+CMP rn = 1
+CMP imm12 = 100
+x[1] = 67
+cache code size: 20
+48 c7 c2 1 0 0 0 48 1 d3 48 1 c8 49 89 df 49 83 ef 64 r15 = -33
+===============================
+Saved registers rax = 234417794003008, rbx = 67, rcx = 94630053548096
+BNE instruction detected!
+Add instruction detected!
+Code = 0x91000421
+Add rn = 1
+Add rd = 1
+Add imm12 = 1
+Add register instruction detected!
+Add rd = 0
+Add rn = 0
+Add rm = 2
+CMP instruction detected!
+CMP rn = 1
+CMP imm12 = 100
+x[1] = 68
+cache code size: 20
+48 c7 c2 1 0 0 0 48 1 d3 48 1 c8 49 89 df 49 83 ef 64 r15 = -32
+===============================
+Saved registers rax = 234417793998912, rbx = 68, rcx = 94630053548096
+BNE instruction detected!
+Add instruction detected!
+Code = 0x91000421
+Add rn = 1
+Add rd = 1
+Add imm12 = 1
+Add register instruction detected!
+Add rd = 0
+Add rn = 0
+Add rm = 2
+CMP instruction detected!
+CMP rn = 1
+CMP imm12 = 100
+x[1] = 69
+cache code size: 20
+48 c7 c2 1 0 0 0 48 1 d3 48 1 c8 49 89 df 49 83 ef 64 r15 = -31
+===============================
+Saved registers rax = 234417793994816, rbx = 69, rcx = 94630053548096
+BNE instruction detected!
+Add instruction detected!
+Code = 0x91000421
+Add rn = 1
+Add rd = 1
+Add imm12 = 1
+Add register instruction detected!
+Add rd = 0
+Add rn = 0
+Add rm = 2
+CMP instruction detected!
+CMP rn = 1
+CMP imm12 = 100
+x[1] = 70
+cache code size: 20
+48 c7 c2 1 0 0 0 48 1 d3 48 1 c8 49 89 df 49 83 ef 64 r15 = -30
+===============================
+Saved registers rax = 234417793990720, rbx = 70, rcx = 94630053548096
+BNE instruction detected!
+Add instruction detected!
+Code = 0x91000421
+Add rn = 1
+Add rd = 1
+Add imm12 = 1
+Add register instruction detected!
+Add rd = 0
+Add rn = 0
+Add rm = 2
+CMP instruction detected!
+CMP rn = 1
+CMP imm12 = 100
+x[1] = 71
+cache code size: 20
+48 c7 c2 1 0 0 0 48 1 d3 48 1 c8 49 89 df 49 83 ef 64 r15 = -29
+===============================
+Saved registers rax = 234417793986624, rbx = 71, rcx = 94630053548096
+BNE instruction detected!
+Add instruction detected!
+Code = 0x91000421
+Add rn = 1
+Add rd = 1
+Add imm12 = 1
+Add register instruction detected!
+Add rd = 0
+Add rn = 0
+Add rm = 2
+CMP instruction detected!
+CMP rn = 1
+CMP imm12 = 100
+x[1] = 72
+cache code size: 20
+48 c7 c2 1 0 0 0 48 1 d3 48 1 c8 49 89 df 49 83 ef 64 r15 = -28
+===============================
+Saved registers rax = 234417793982528, rbx = 72, rcx = 94630053548096
+BNE instruction detected!
+Add instruction detected!
+Code = 0x91000421
+Add rn = 1
+Add rd = 1
+Add imm12 = 1
+Add register instruction detected!
+Add rd = 0
+Add rn = 0
+Add rm = 2
+CMP instruction detected!
+CMP rn = 1
+CMP imm12 = 100
+x[1] = 73
+cache code size: 20
+48 c7 c2 1 0 0 0 48 1 d3 48 1 c8 49 89 df 49 83 ef 64 r15 = -27
+===============================
+Saved registers rax = 234417793978432, rbx = 73, rcx = 94630053548096
+BNE instruction detected!
+Add instruction detected!
+Code = 0x91000421
+Add rn = 1
+Add rd = 1
+Add imm12 = 1
+Add register instruction detected!
+Add rd = 0
+Add rn = 0
+Add rm = 2
+CMP instruction detected!
+CMP rn = 1
+CMP imm12 = 100
+x[1] = 74
+cache code size: 20
+48 c7 c2 1 0 0 0 48 1 d3 48 1 c8 49 89 df 49 83 ef 64 r15 = -26
+===============================
+Saved registers rax = 234417793974336, rbx = 74, rcx = 94630053548096
+BNE instruction detected!
+Add instruction detected!
+Code = 0x91000421
+Add rn = 1
+Add rd = 1
+Add imm12 = 1
+Add register instruction detected!
+Add rd = 0
+Add rn = 0
+Add rm = 2
+CMP instruction detected!
+CMP rn = 1
+CMP imm12 = 100
+x[1] = 75
+cache code size: 20
+48 c7 c2 1 0 0 0 48 1 d3 48 1 c8 49 89 df 49 83 ef 64 r15 = -25
+===============================
+Saved registers rax = 234417793970240, rbx = 75, rcx = 94630053548096
+BNE instruction detected!
+Add instruction detected!
+Code = 0x91000421
+Add rn = 1
+Add rd = 1
+Add imm12 = 1
+Add register instruction detected!
+Add rd = 0
+Add rn = 0
+Add rm = 2
+CMP instruction detected!
+CMP rn = 1
+CMP imm12 = 100
+x[1] = 76
+cache code size: 20
+48 c7 c2 1 0 0 0 48 1 d3 48 1 c8 49 89 df 49 83 ef 64 r15 = -24
+===============================
+Saved registers rax = 234417793966144, rbx = 76, rcx = 94630053548096
+BNE instruction detected!
+Add instruction detected!
+Code = 0x91000421
+Add rn = 1
+Add rd = 1
+Add imm12 = 1
+Add register instruction detected!
+Add rd = 0
+Add rn = 0
+Add rm = 2
+CMP instruction detected!
+CMP rn = 1
+CMP imm12 = 100
+x[1] = 77
+cache code size: 20
+48 c7 c2 1 0 0 0 48 1 d3 48 1 c8 49 89 df 49 83 ef 64 r15 = -23
+===============================
+Saved registers rax = 234417793962048, rbx = 77, rcx = 94630053548096
+BNE instruction detected!
+Add instruction detected!
+Code = 0x91000421
+Add rn = 1
+Add rd = 1
+Add imm12 = 1
+Add register instruction detected!
+Add rd = 0
+Add rn = 0
+Add rm = 2
+CMP instruction detected!
+CMP rn = 1
+CMP imm12 = 100
+x[1] = 78
+cache code size: 20
+48 c7 c2 1 0 0 0 48 1 d3 48 1 c8 49 89 df 49 83 ef 64 r15 = -22
+===============================
+Saved registers rax = 234417793957952, rbx = 78, rcx = 94630053548096
+BNE instruction detected!
+Add instruction detected!
+Code = 0x91000421
+Add rn = 1
+Add rd = 1
+Add imm12 = 1
+Add register instruction detected!
+Add rd = 0
+Add rn = 0
+Add rm = 2
+CMP instruction detected!
+CMP rn = 1
+CMP imm12 = 100
+x[1] = 79
+cache code size: 20
+48 c7 c2 1 0 0 0 48 1 d3 48 1 c8 49 89 df 49 83 ef 64 r15 = -21
+===============================
+Saved registers rax = 234417793953856, rbx = 79, rcx = 94630053548096
+BNE instruction detected!
+Add instruction detected!
+Code = 0x91000421
+Add rn = 1
+Add rd = 1
+Add imm12 = 1
+Add register instruction detected!
+Add rd = 0
+Add rn = 0
+Add rm = 2
+CMP instruction detected!
+CMP rn = 1
+CMP imm12 = 100
+x[1] = 80
+cache code size: 20
+48 c7 c2 1 0 0 0 48 1 d3 48 1 c8 49 89 df 49 83 ef 64 r15 = -20
+===============================
+Saved registers rax = 234417793949760, rbx = 80, rcx = 94630053548096
+BNE instruction detected!
+Add instruction detected!
+Code = 0x91000421
+Add rn = 1
+Add rd = 1
+Add imm12 = 1
+Add register instruction detected!
+Add rd = 0
+Add rn = 0
+Add rm = 2
+CMP instruction detected!
+CMP rn = 1
+CMP imm12 = 100
+x[1] = 81
+cache code size: 20
+48 c7 c2 1 0 0 0 48 1 d3 48 1 c8 49 89 df 49 83 ef 64 r15 = -19
+===============================
+Saved registers rax = 234417793945664, rbx = 81, rcx = 94630053548096
+BNE instruction detected!
+Add instruction detected!
+Code = 0x91000421
+Add rn = 1
+Add rd = 1
+Add imm12 = 1
+Add register instruction detected!
+Add rd = 0
+Add rn = 0
+Add rm = 2
+CMP instruction detected!
+CMP rn = 1
+CMP imm12 = 100
+x[1] = 82
+cache code size: 20
+48 c7 c2 1 0 0 0 48 1 d3 48 1 c8 49 89 df 49 83 ef 64 r15 = -18
+===============================
+Saved registers rax = 234417793941568, rbx = 82, rcx = 94630053548096
+BNE instruction detected!
+Add instruction detected!
+Code = 0x91000421
+Add rn = 1
+Add rd = 1
+Add imm12 = 1
+Add register instruction detected!
+Add rd = 0
+Add rn = 0
+Add rm = 2
+CMP instruction detected!
+CMP rn = 1
+CMP imm12 = 100
+x[1] = 83
+cache code size: 20
+48 c7 c2 1 0 0 0 48 1 d3 48 1 c8 49 89 df 49 83 ef 64 r15 = -17
+===============================
+Saved registers rax = 234417793937472, rbx = 83, rcx = 94630053548096
+BNE instruction detected!
+Add instruction detected!
+Code = 0x91000421
+Add rn = 1
+Add rd = 1
+Add imm12 = 1
+Add register instruction detected!
+Add rd = 0
+Add rn = 0
+Add rm = 2
+CMP instruction detected!
+CMP rn = 1
+CMP imm12 = 100
+x[1] = 84
+cache code size: 20
+48 c7 c2 1 0 0 0 48 1 d3 48 1 c8 49 89 df 49 83 ef 64 r15 = -16
+===============================
+Saved registers rax = 234417793933376, rbx = 84, rcx = 94630053548096
+BNE instruction detected!
+Add instruction detected!
+Code = 0x91000421
+Add rn = 1
+Add rd = 1
+Add imm12 = 1
+Add register instruction detected!
+Add rd = 0
+Add rn = 0
+Add rm = 2
+CMP instruction detected!
+CMP rn = 1
+CMP imm12 = 100
+x[1] = 85
+cache code size: 20
+48 c7 c2 1 0 0 0 48 1 d3 48 1 c8 49 89 df 49 83 ef 64 r15 = -15
+===============================
+Saved registers rax = 234417793929280, rbx = 85, rcx = 94630053548096
+BNE instruction detected!
+Add instruction detected!
+Code = 0x91000421
+Add rn = 1
+Add rd = 1
+Add imm12 = 1
+Add register instruction detected!
+Add rd = 0
+Add rn = 0
+Add rm = 2
+CMP instruction detected!
+CMP rn = 1
+CMP imm12 = 100
+x[1] = 86
+cache code size: 20
+48 c7 c2 1 0 0 0 48 1 d3 48 1 c8 49 89 df 49 83 ef 64 r15 = -14
+===============================
+Saved registers rax = 234417793925184, rbx = 86, rcx = 94630053548096
+BNE instruction detected!
+Add instruction detected!
+Code = 0x91000421
+Add rn = 1
+Add rd = 1
+Add imm12 = 1
+Add register instruction detected!
+Add rd = 0
+Add rn = 0
+Add rm = 2
+CMP instruction detected!
+CMP rn = 1
+CMP imm12 = 100
+x[1] = 87
+cache code size: 20
+48 c7 c2 1 0 0 0 48 1 d3 48 1 c8 49 89 df 49 83 ef 64 r15 = -13
+===============================
+Saved registers rax = 234417793921088, rbx = 87, rcx = 94630053548096
+BNE instruction detected!
+Add instruction detected!
+Code = 0x91000421
+Add rn = 1
+Add rd = 1
+Add imm12 = 1
+Add register instruction detected!
+Add rd = 0
+Add rn = 0
+Add rm = 2
+CMP instruction detected!
+CMP rn = 1
+CMP imm12 = 100
+x[1] = 88
+cache code size: 20
+48 c7 c2 1 0 0 0 48 1 d3 48 1 c8 49 89 df 49 83 ef 64 r15 = -12
+===============================
+Saved registers rax = 234417793916992, rbx = 88, rcx = 94630053548096
+BNE instruction detected!
+Add instruction detected!
+Code = 0x91000421
+Add rn = 1
+Add rd = 1
+Add imm12 = 1
+Add register instruction detected!
+Add rd = 0
+Add rn = 0
+Add rm = 2
+CMP instruction detected!
+CMP rn = 1
+CMP imm12 = 100
+x[1] = 89
+cache code size: 20
+48 c7 c2 1 0 0 0 48 1 d3 48 1 c8 49 89 df 49 83 ef 64 r15 = -11
+===============================
+Saved registers rax = 234417793912896, rbx = 89, rcx = 94630053548096
+BNE instruction detected!
+Add instruction detected!
+Code = 0x91000421
+Add rn = 1
+Add rd = 1
+Add imm12 = 1
+Add register instruction detected!
+Add rd = 0
+Add rn = 0
+Add rm = 2
+CMP instruction detected!
+CMP rn = 1
+CMP imm12 = 100
+x[1] = 90
+cache code size: 20
+48 c7 c2 1 0 0 0 48 1 d3 48 1 c8 49 89 df 49 83 ef 64 r15 = -10
+===============================
+Saved registers rax = 234417793908800, rbx = 90, rcx = 94630053548096
+BNE instruction detected!
+Add instruction detected!
+Code = 0x91000421
+Add rn = 1
+Add rd = 1
+Add imm12 = 1
+Add register instruction detected!
+Add rd = 0
+Add rn = 0
+Add rm = 2
+CMP instruction detected!
+CMP rn = 1
+CMP imm12 = 100
+x[1] = 91
+cache code size: 20
+48 c7 c2 1 0 0 0 48 1 d3 48 1 c8 49 89 df 49 83 ef 64 r15 = -9
+===============================
+Saved registers rax = 234417793904704, rbx = 91, rcx = 94630053548096
+BNE instruction detected!
+Add instruction detected!
+Code = 0x91000421
+Add rn = 1
+Add rd = 1
+Add imm12 = 1
+Add register instruction detected!
+Add rd = 0
+Add rn = 0
+Add rm = 2
+CMP instruction detected!
+CMP rn = 1
+CMP imm12 = 100
+x[1] = 92
+cache code size: 20
+48 c7 c2 1 0 0 0 48 1 d3 48 1 c8 49 89 df 49 83 ef 64 r15 = -8
+===============================
+Saved registers rax = 234417793900608, rbx = 92, rcx = 94630053548096
+BNE instruction detected!
+Add instruction detected!
+Code = 0x91000421
+Add rn = 1
+Add rd = 1
+Add imm12 = 1
+Add register instruction detected!
+Add rd = 0
+Add rn = 0
+Add rm = 2
+CMP instruction detected!
+CMP rn = 1
+CMP imm12 = 100
+x[1] = 93
+cache code size: 20
+48 c7 c2 1 0 0 0 48 1 d3 48 1 c8 49 89 df 49 83 ef 64 r15 = -7
+===============================
+Saved registers rax = 234417793896512, rbx = 93, rcx = 94630053548096
+BNE instruction detected!
+Add instruction detected!
+Code = 0x91000421
+Add rn = 1
+Add rd = 1
+Add imm12 = 1
+Add register instruction detected!
+Add rd = 0
+Add rn = 0
+Add rm = 2
+CMP instruction detected!
+CMP rn = 1
+CMP imm12 = 100
+x[1] = 94
+cache code size: 20
+48 c7 c2 1 0 0 0 48 1 d3 48 1 c8 49 89 df 49 83 ef 64 r15 = -6
+===============================
+Saved registers rax = 234417793892416, rbx = 94, rcx = 94630053548096
+BNE instruction detected!
+Add instruction detected!
+Code = 0x91000421
+Add rn = 1
+Add rd = 1
+Add imm12 = 1
+Add register instruction detected!
+Add rd = 0
+Add rn = 0
+Add rm = 2
+CMP instruction detected!
+CMP rn = 1
+CMP imm12 = 100
+x[1] = 95
+cache code size: 20
+48 c7 c2 1 0 0 0 48 1 d3 48 1 c8 49 89 df 49 83 ef 64 r15 = -5
+===============================
+Saved registers rax = 234417793888320, rbx = 95, rcx = 94630053548096
+BNE instruction detected!
+Add instruction detected!
+Code = 0x91000421
+Add rn = 1
+Add rd = 1
+Add imm12 = 1
+Add register instruction detected!
+Add rd = 0
+Add rn = 0
+Add rm = 2
+CMP instruction detected!
+CMP rn = 1
+CMP imm12 = 100
+x[1] = 96
+cache code size: 20
+48 c7 c2 1 0 0 0 48 1 d3 48 1 c8 49 89 df 49 83 ef 64 r15 = -4
+===============================
+Saved registers rax = 234417793884224, rbx = 96, rcx = 94630053548096
+BNE instruction detected!
+Add instruction detected!
+Code = 0x91000421
+Add rn = 1
+Add rd = 1
+Add imm12 = 1
+Add register instruction detected!
+Add rd = 0
+Add rn = 0
+Add rm = 2
+CMP instruction detected!
+CMP rn = 1
+CMP imm12 = 100
+x[1] = 97
+cache code size: 20
+48 c7 c2 1 0 0 0 48 1 d3 48 1 c8 49 89 df 49 83 ef 64 r15 = -3
+===============================
+Saved registers rax = 234417793880128, rbx = 97, rcx = 94630053548096
+BNE instruction detected!
+Add instruction detected!
+Code = 0x91000421
+Add rn = 1
+Add rd = 1
+Add imm12 = 1
+Add register instruction detected!
+Add rd = 0
+Add rn = 0
+Add rm = 2
+CMP instruction detected!
+CMP rn = 1
+CMP imm12 = 100
+x[1] = 98
+cache code size: 20
+48 c7 c2 1 0 0 0 48 1 d3 48 1 c8 49 89 df 49 83 ef 64 r15 = -2
+===============================
+Saved registers rax = 234417793876032, rbx = 98, rcx = 94630053548096
+BNE instruction detected!
+Add instruction detected!
+Code = 0x91000421
+Add rn = 1
+Add rd = 1
+Add imm12 = 1
+Add register instruction detected!
+Add rd = 0
+Add rn = 0
+Add rm = 2
+CMP instruction detected!
+CMP rn = 1
+CMP imm12 = 100
+x[1] = 99
+cache code size: 20
+48 c7 c2 1 0 0 0 48 1 d3 48 1 c8 49 89 df 49 83 ef 64 r15 = -1
+===============================
+Saved registers rax = 234417793871936, rbx = 99, rcx = 94630053548096
+BNE instruction detected!
+Add instruction detected!
+Code = 0x91000421
+Add rn = 1
+Add rd = 1
+Add imm12 = 1
+Add register instruction detected!
+Add rd = 0
+Add rn = 0
+Add rm = 2
+CMP instruction detected!
+CMP rn = 1
+CMP imm12 = 100
+x[1] = 100
+cache code size: 20
+48 c7 c2 1 0 0 0 48 1 d3 48 1 c8 49 89 df 49 83 ef 64 r15 = 0
+===============================
+Saved registers rax = 234417793867840, rbx = 100, rcx = 94630053548096
