@@ -7,21 +7,36 @@
 unsigned char cache_code[1024];
 unsigned int code_length = 0;
 
-uint64_t RAX = 0, RBX = 0, RCX = 0;
-int64_t R15;
+uint64_t R8= 0, R9 = 0, R10 = 0;
+uint64_t a, b, c;
 
 #define save_registers \
-  	asm("movq %%rax, %0" : "=r"(RAX)); \
-  	asm("movq %%rbx, %0" : "=r"(RBX)); \
-  	asm("movq %%rcx, %0" : "=r"(RCX)); \
+  	asm("movq %%r8, %0" : "=r"(R8)); \
+  	asm("movq %%r9, %0" : "=r"(R9)); \
+  	asm("movq %%r10, %0" : "=r"(R10)); \
 
 #define load_registers \
-	uint64_t a, b, c; \
-	int64_t r; \
-	printf(">> RAX = %ld, RBX = %ld, RCX = %ld\n", RAX, RBX, RCX); \
-	asm("movq %1, %%rax" : "=a"(a) : "r"(RAX)); \
-	asm("movq %1, %%rbx" : "=a"(b) : "r"(RBX)); \
-	asm("movq %1, %%rcx" : "=a"(c) : "r"(RCX)); \
+	unsigned char code1[] = { \
+		0x49, 0xc7, 0xc0, \
+		(R8 & 0x000000FF), \
+		(R8 & 0x0000FF00) >> 8, \
+		(R8 & 0x00FF0000) >> 16,\
+		(R8 & 0xFF000000) >> 24,\
+					\
+		0x49, 0xc7, 0xc1,	\
+		(R9 & 0x000000FF), 	\
+		(R9 & 0x0000FF00) >> 8, \
+		(R9 & 0x00FF0000) >> 16,\
+		(R9 & 0xFF000000) >> 24,\
+					\
+		0x49, 0xc7, 0xc2,	\
+					\
+		(R10 & 0x000000FF), 	\
+		(R10 & 0x0000FF00) >> 8,\
+		(R10 & 0x00FF0000) >> 16,\
+		(R10 & 0xFF000000) >> 24,\
+	};				\
+	emit_code(code1, sizeof(code1) / sizeof(code1[0]));\
 
 void emit_code(unsigned char* user_code, int code_size) {
 	memcpy(cache_code + code_length, user_code, code_size); 
@@ -59,7 +74,6 @@ void run_from_rwx(unsigned char *code, int size) {
 
   JittedFunc func = m;
 
-  load_registers;
   int result = func(3);
 }
 
@@ -77,7 +91,8 @@ int parse_mov(unsigned int code) {
 		printf("x[rd] = %lu\n", x[rd]);
 		if (rd == 0) {
 			unsigned char code[] = {
-				0x48, 0xc7, 0xc0, 
+				// mov r8, imm12
+				0x49, 0xc7, 0xc0, 
 				(imm12 & 0x000000FF), 
 				(imm12 & 0x0000FF00) >> 8, 
 				(imm12 & 0x00FF0000) >> 16, 
@@ -87,7 +102,8 @@ int parse_mov(unsigned int code) {
 			emit_code(code, sizeof(code) / sizeof(code[0]));
 		} else if (rd == 1) {
 			unsigned char code[] = {
-				0x48, 0xc7, 0xc3, 
+				// mov r9, imm12
+				0x49, 0xc7, 0xc1, 
 				(imm12 & 0x000000FF), 
 				(imm12 & 0x0000FF00) >> 8, 
 				(imm12 & 0x00FF0000) >> 16, 
@@ -97,7 +113,8 @@ int parse_mov(unsigned int code) {
 			emit_code(code, sizeof(code) / sizeof(code[0]));
 		} else if (rd == 2) {
 			unsigned char code[] = {
-				0x48, 0xc7, 0xc1, 
+				// mov r10, imm12
+				0x49, 0xc7, 0xc2, 
 				(imm12 & 0x000000FF), 
 				(imm12 & 0x0000FF00) >> 8, 
 				(imm12 & 0x00FF0000) >> 16, 
@@ -126,15 +143,14 @@ int parse_add(unsigned int code) {
 		printf("Add imm12 = %d\n", imm12);
 		x[rd] = x[rn] + imm12;
 		if (rd == 1) {
-			// mov rbx, 0
-			// mov rdx, imm
 			unsigned char code[] = {
-				0x48, 0xc7, 0xc2, 
+				// mov r11, imm12
+				0x49, 0xc7, 0xc3, 
 				(imm12 & 0x000000FF), 
 				(imm12 & 0x0000FF00) >> 8, 
 				(imm12 & 0x00FF0000) >> 16, 
 				(imm12 & 0xFF000000) >> 24,
-				0x48, 0x01, 0xd3,
+				0x4d, 0x01, 0xd9,
 			};
 			
 			emit_code(code, sizeof(code) / sizeof(code[0]));
@@ -159,9 +175,9 @@ int parse_add_register(unsigned int code) {
 		x[rd] = x[rn] + x[rm];
 
 		if (rd == 0) {
-			// add rax, rcx
+			// mov r8, r9
 			unsigned char code[] = {
-				0x48, 0x01, 0xc8,
+				0x4d, 0x01, 0xd0,
 			};
 			
 			emit_code(code, sizeof(code) / sizeof(code[0]));
@@ -184,9 +200,8 @@ int parse_cmp(unsigned int code) {
 		if (x[rn] == imm12) {
 			flag = 1;
 		}
-		// add rax, rcx
 		unsigned char code[] = {
-			0x49, 0x89, 0xdf,
+			0x4d, 0x89, 0xcf,
 			0x49, 0x83, 0xef, imm12,
 		};
 		
@@ -247,10 +262,11 @@ int eval() {
   			asm("\t movq %%r15,%0" : "=r"(r15));
 			printf("r15 = %ld\n", r15);
 			printf("===============================\n");
-			printf("Saved registers rax = %ld, rbx = %ld, rcx = %ld\n", RAX, RBX, RCX);
-			if (r15 < -98) {
+			printf("Saved registers r8 = %ld, r9= %ld, r10 = %ld\n", R8, R9, R10);
+			if (r15 < 0) {
 				parse_bne(code);
 				code_length = 0;
+				load_registers;
 			}
 		}
 		pc++;
